@@ -1,0 +1,23 @@
+#Parametros de servidor
+[PARAMS]
+interfaceName = Ethernet 2
+sleeptime = 5
+#Comandos a ejecutar
+[COMANDS]
+deshabilitar = netsh interface set interface name= "interfaceName" admin=disabled 
+habilitar = netsh interface set interface name= "interfaceName" admin=enabled
+#Servidores hacia donde se hace pruebas
+[TEST]
+ip1 = 10.0.2.254
+ip2 = 192.168.0.101
+ip3 = 10.0.10.10
+prueba1 = ping ip1 >> temp1
+prueba2 = ping ip2 >> temp2
+prueba3 = ping ip3 >> temp3
+#ArchivosTemporales
+[TEMP]
+temp1 = ping1.txt
+temp2 = ping2.txt
+temp3 = ping3.txt
+[RESULTS]
+r1 = Request timed out.
