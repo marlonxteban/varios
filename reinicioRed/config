@@ -21,3 +21,4 @@ temp2 = ping2.txt
 temp3 = ping3.txt
 [RESULTS]
 r1 = Request timed out.
+r2 = transmit failed.

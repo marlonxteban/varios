@@ -25,15 +25,16 @@ prueba2 = Config.get("TEST",'prueba2').replace('ip2', ip2).replace('temp2', temp
 try:
 	comando1 = os.system(prueba1)
 	result1 = Config.get("RESULTS",'r1')
+	result2 = Config.get("RESULTS",'r2')
 	with open(temp1) as f:
 		read_data = f.read()
 
-	if read_data.count(result1) >= 3:
+	if read_data.count(result1) >= 3 or read_data.count(result2)>= 3:
 		os.remove(temp1)
 		comando2 = os.system(prueba2)
 		with open(temp2) as f:
 			read_data = f.read()
-		if read_data.count(result1) >= 3:
+		if read_data.count(result1) >= 3 or read_data.count(result2)>= 3:
 			os.system(deshabilitar)
 			print("Reiniciando interfaz de red %s", interface)
 			time.sleep(Config.getint("PARAMS",'sleeptime'))
