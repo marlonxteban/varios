@@ -47,7 +47,6 @@ except Exception as e:
 	print("Ejecucion Con Errores")
 	print(e)
 finally:
-	os.remove(temp1)
 	print("Ejecucion Completada")
 
 
