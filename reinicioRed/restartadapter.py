@@ -30,7 +30,6 @@ try:
 		read_data = f.read()
 
 	if read_data.count(result1) >= 3 or read_data.count(result2)>= 3:
-		os.remove(temp1)
 		comando2 = os.system(prueba2)
 		with open(temp2) as f:
 			read_data = f.read()
@@ -40,8 +39,8 @@ try:
 			time.sleep(Config.getint("PARAMS",'sleeptime'))
 			os.system(habilitar)
 			print("interfaz de red %s reiniciada", interface)
-			
 			os.remove(temp2)
+	os.remove(temp1)
 #print(read_data.count(result1))
 except Exception as e:
 	print("Ejecucion Con Errores")
